@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FacultySenateDBModelStoreContainer" CdmEntityContainer="FacultySenateDBEntities">
+    <EntitySetMapping Name="Committees">
+      <EntityTypeMapping TypeName="FacultySenateDBModel.Committee">
+        <MappingFragment StoreEntitySet="FacVote_Committee">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CommitteeTypeId" ColumnName="CommitteeTypeId" />
+          <ScalarProperty Name="TermLength" ColumnName="TermLength" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommitteeMembers">
+      <EntityTypeMapping TypeName="FacultySenateDBModel.CommitteeMember">
+        <MappingFragment StoreEntitySet="FacVote_CommitteeMember">
+          <ScalarProperty Name="ElectionId" ColumnName="ElectionId" />
+          <ScalarProperty Name="Appointed" ColumnName="Appointed" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="FacultyId" ColumnName="FacultyId" />
+          <ScalarProperty Name="CommitteeSeatId" ColumnName="CommitteeSeatId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommitteeSeats">
+      <EntityTypeMapping TypeName="FacultySenateDBModel.CommitteeSeat">
+        <MappingFragment StoreEntitySet="FacVote_CommitteeSeat">
+          <ScalarProperty Name="StaggerYear" ColumnName="StaggerYear" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="FacultySchoolId" ColumnName="FacultySchoolId" />
+          <ScalarProperty Name="CommitteeId" ColumnName="CommitteeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommitteeTypes">
+      <EntityTypeMapping TypeName="FacultySenateDBModel.CommitteeType">
+        <MappingFragment StoreEntitySet="FacVote_CommitteeType">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Elections">
+      <EntityTypeMapping TypeName="FacultySenateDBModel.Election">
+        <MappingFragment StoreEntitySet="FacVote_Election">
+          <ScalarProperty Name="TermStartDate" ColumnName="TermStartDate" />
+          <ScalarProperty Name="VotingEndDate" ColumnName="VotingEndDate" />
+          <ScalarProperty Name="VotingStartDate" ColumnName="VotingStartDate" />
+          <ScalarProperty Name="NominationEndDate" ColumnName="NominationEndDate" />
+          <ScalarProperty Name="NominationStartDate" ColumnName="NominationStartDate" />
+          <ScalarProperty Name="ElectionTypeId" ColumnName="ElectionTypeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElectionNominations">
+      <EntityTypeMapping TypeName="FacultySenateDBModel.ElectionNomination">
+        <MappingFragment StoreEntitySet="FacVote_ElectionNomination">
+          <ScalarProperty Name="FacultyId" ColumnName="FacultyId" />
+          <ScalarProperty Name="CommitteeSeatId" ColumnName="CommitteeSeatId" />
+          <ScalarProperty Name="ElectionId" ColumnName="ElectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElectionSpecialSeats">
+      <EntityTypeMapping TypeName="FacultySenateDBModel.ElectionSpecialSeat">
+        <MappingFragment StoreEntitySet="FacVote_ElectionSpecialSeat">
+          <ScalarProperty Name="TermEndDate" ColumnName="TermEndDate" />
+          <ScalarProperty Name="TermLength" ColumnName="TermLength" />
+          <ScalarProperty Name="CommitteeSeatId" ColumnName="CommitteeSeatId" />
+          <ScalarProperty Name="ElectionId" ColumnName="ElectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElectionTypes">
+      <EntityTypeMapping TypeName="FacultySenateDBModel.ElectionType">
+        <MappingFragment StoreEntitySet="FacVote_ElectionType">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElectionVotes">
+      <EntityTypeMapping TypeName="FacultySenateDBModel.ElectionVote">
+        <MappingFragment StoreEntitySet="FacVote_ElectionVote">
+          <ScalarProperty Name="FacultyId_Voter" ColumnName="FacultyId_Voter" />
+          <ScalarProperty Name="FacultyId_Nominee" ColumnName="FacultyId_Nominee" />
+          <ScalarProperty Name="CommitteeId" ColumnName="CommitteeId" />
+          <ScalarProperty Name="ElectionId" ColumnName="ElectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Faculties">
+      <EntityTypeMapping TypeName="FacultySenateDBModel.Faculty">
+        <MappingFragment StoreEntitySet="FacVote_Faculty">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Graduate" ColumnName="Graduate" />
+          <ScalarProperty Name="Tenure" ColumnName="Tenure" />
+          <ScalarProperty Name="FacultyRankId" ColumnName="FacultyRankId" />
+          <ScalarProperty Name="FacultyDisciplineId" ColumnName="FacultyDisciplineId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Last" ColumnName="Last" />
+          <ScalarProperty Name="First" ColumnName="First" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FacultyDisciplines">
+      <EntityTypeMapping TypeName="FacultySenateDBModel.FacultyDiscipline">
+        <MappingFragment StoreEntitySet="FacVote_FacultyDiscipline">
+          <ScalarProperty Name="FacultySchoolId" ColumnName="FacultySchoolId" />
+          <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FacultyRanks">
+      <EntityTypeMapping TypeName="FacultySenateDBModel.FacultyRank">
+        <MappingFragment StoreEntitySet="FacVote_FacultyRank">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FacultySchools">
+      <EntityTypeMapping TypeName="FacultySenateDBModel.FacultySchool">
+        <MappingFragment StoreEntitySet="FacVote_FacultySchool">
+          <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

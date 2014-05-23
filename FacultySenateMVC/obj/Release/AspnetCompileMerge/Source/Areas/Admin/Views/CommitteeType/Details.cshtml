@@ -1,0 +1,30 @@
+﻿@model FacultySenateMVC.Models.CommitteeType
+
+@{
+    ViewBag.Title = "Committee Type Details";
+}
+
+<h2>Committee Type Details</h2>
+
+<fieldset>
+    <legend>Committee Type</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+</fieldset>
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</div>

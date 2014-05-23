@@ -1,0 +1,37 @@
+﻿@model FacultySenateMVC.Models.FacultySchool
+
+@{
+    ViewBag.Title = "School Details";
+}
+
+<h2>School Details</h2>
+
+<fieldset>
+    <legend>School</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Abbreviation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Abbreviation)
+    </div>
+</fieldset>
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</div>

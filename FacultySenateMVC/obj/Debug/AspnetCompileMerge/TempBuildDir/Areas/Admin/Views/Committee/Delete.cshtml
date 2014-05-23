@@ -1,0 +1,62 @@
+﻿@model FacultySenateMVC.Models.Committee
+
+@{
+    ViewBag.Title = "Delete Committee";
+}
+
+<h2>Delete Committee</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Committee</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         Type
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CommitteeType.Name)
+    </div>
+
+    <div class="display-label">
+         Term Length
+    </div>
+    <div class="display-field">
+        @if (Model.TermLength == null)
+        {
+            @:None
+        }
+        else
+        {
+            @Html.DisplayFor(model => model.TermLength) @:years
+        }
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Active)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Active)
+    </div>
+</fieldset>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <div>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bc6f08414efd487e981cbeb70ca4413c" Name="Diagram" ZoomLevel="81">
+        <EntityTypeShape EntityType="FacultySenateDBModel.Committee" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.CommitteeMember" Width="1.75" PointX="7.375" PointY="0.5" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.CommitteeSeat" Width="1.625" PointX="5" PointY="0.5" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.CommitteeType" Width="1.5" PointX="2.75" PointY="0.5" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.Election" Width="1.75" PointX="0.5" PointY="4.625" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.ElectionNomination" Width="1.75" PointX="7.5" PointY="4.625" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.ElectionSpecialSeat" Width="1.75" PointX="5" PointY="4.625" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.ElectionType" Width="1.5" PointX="2.875" PointY="4.625" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.ElectionVote" Width="1.625" PointX="9.875" PointY="4.625" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.Faculty" Width="1.875" PointX="0.5" PointY="8.625" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.FacultyDiscipline" Width="1.625" PointX="5" PointY="8.5" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.FacultyRank" Width="1.5" PointX="2.875" PointY="8.625" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.FacultySchool" Width="1.5" PointX="7.625" PointY="8.5" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_Committee_FacVote_CommitteeType" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_CommitteeSeat_FacVote_Committee" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_ElectionVote_FacVote_Committee" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_CommitteeMember_FacVote_CommitteeSeat" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_CommitteeMember_FacVote_Faculty" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_CommitteeSeat_FacVote_FacultySchool" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_ElectionNomination_FacVote_CommitteeSeat" ManuallyRouted="true" >
+          <ConnectorPoint PointX="6.625" PointY="3.3792926197916673" />
+          <ConnectorPoint PointX="7.0035744349011217" PointY="3.7578670546927877" />
+          <ConnectorPoint PointX="7.1214255650988791" PointY="3.8757181848905464" />
+          <ConnectorPoint PointX="7.125001" PointY="3.8792936197916674" />
+          <ConnectorPoint PointX="7.125001" PointY="4.0663456209236006" />
+          <ConnectorPoint PointX="8.470760324120242" PointY="4.0663456209236006" />
+          <ConnectorPoint PointX="8.470760324120242" PointY="4.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_ElectionSpecialSeat_FacVote_CommitteeSeat" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_Election_FacVote_ElectionType" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_ElectionNomination_FacVote_Election" ManuallyRouted="true" >
+          <ConnectorPoint PointX="2.25" PointY="7.54007911737926" />
+          <ConnectorPoint PointX="4.3125" PointY="7.54007911737926" />
+          <ConnectorPoint PointX="4.3125" PointY="7.8657960213183422" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="7.8657960213183413" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="7.8657960213183422" />
+          <ConnectorPoint PointX="7.447916666666667" PointY="7.8657960213183413" />
+          <ConnectorPoint PointX="7.614583333333333" PointY="7.8657960213183422" />
+          <ConnectorPoint PointX="7.9791671666666675" PointY="7.8657960213183413" />
+          <ConnectorPoint PointX="8.1458338333333344" PointY="7.8657960213183422" />
+          <ConnectorPoint PointX="8.5" PointY="7.8657960213183422" />
+          <ConnectorPoint PointX="8.5" PointY="6.9898893229166674" />
+        </AssociationConnector>
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_ElectionSpecialSeat_FacVote_Election" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_ElectionVote_FacVote_Election" ManuallyRouted="true" >
+          <ConnectorPoint PointX="2.25" PointY="7.2943594734916521" />
+          <ConnectorPoint PointX="4.68375" PointY="7.2943594734916521" />
+          <ConnectorPoint PointX="4.68375" PointY="7.5427914293851552" />
+          <ConnectorPoint PointX="7.447916666666667" PointY="7.5427914293851543" />
+          <ConnectorPoint PointX="7.614583333333333" PointY="7.5427914293851552" />
+          <ConnectorPoint PointX="7.9791671666666675" PointY="7.5427914293851543" />
+          <ConnectorPoint PointX="8.1458338333333344" PointY="7.5427914293851552" />
+          <ConnectorPoint PointX="8.4166666666666661" PointY="7.5427914293851543" />
+          <ConnectorPoint PointX="8.5833333333333339" PointY="7.5427914293851552" />
+          <ConnectorPoint PointX="9.625" PointY="7.5427914293851552" />
+          <ConnectorPoint PointX="9.625" PointY="7.6244921875" />
+          <ConnectorPoint PointX="10.141201791365543" PointY="7.6244921875" />
+          <ConnectorPoint PointX="10.141201791365543" PointY="7.3744921875" />
+        </AssociationConnector>
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_ElectionNomination_FacVote_Faculty" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_ElectionVote_FacVote_Faculty_Nominee" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_ElectionVote_FacVote_Faculty_Voter" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_Faculty_FacVote_FacultyDiscipline" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_Faculty_FacVote_FacultyRank" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_FacultyDiscipline_FacVote_FacultySchool" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

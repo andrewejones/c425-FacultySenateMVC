@@ -1,0 +1,44 @@
+﻿@model FacultySenateMVC.Models.ElectionNomination
+
+@{
+    ViewBag.Title = "Election Nomination Details";
+}
+
+<h2>Election Nomination Details</h2>
+
+<fieldset>
+    <legend>Election Nomination</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id)
+    </div>
+
+    <div class="display-label">
+         Election Id
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Election.Id)
+    </div>
+
+    <div class="display-label">
+         Committee Seat Id
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CommitteeSeat.Id)
+    </div>
+
+    <div class="display-label">
+         Faculty
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Faculty.Last), @Html.DisplayFor(model => model.Faculty.First)
+    </div>
+</fieldset>
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</div>

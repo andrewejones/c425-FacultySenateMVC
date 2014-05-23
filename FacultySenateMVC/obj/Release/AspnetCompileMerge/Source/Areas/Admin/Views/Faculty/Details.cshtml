@@ -1,0 +1,72 @@
+﻿@model FacultySenateMVC.Models.Faculty
+
+@{
+    ViewBag.Title = "Faculty Details";
+}
+
+<h2>Faculty Details</h2>
+
+<fieldset>
+    <legend>Faculty</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.First)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.First)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Last)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Last)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         Discipline
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FacultyDiscipline.Name)
+    </div>
+
+    <div class="display-label">
+         Rank
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FacultyRank.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Tenure)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tenure)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Graduate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Graduate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Active)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Active)
+    </div>
+</fieldset>
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</div>

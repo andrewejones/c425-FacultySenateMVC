@@ -1,0 +1,73 @@
+﻿@model FacultySenateMVC.Models.Election
+
+@{
+    ViewBag.Title = "Create Election";
+}
+
+<h2>Create Election</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Election</legend>
+
+        <div class="editor-label">
+            Election Type
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ElectionTypeId", String.Empty)
+            @Html.ValidationMessageFor(model => model.ElectionTypeId)
+        </div>
+
+        <div class="editor-label">
+            Nomination Start Date
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NominationStartDate)
+            @Html.ValidationMessageFor(model => model.NominationStartDate)
+        </div>
+
+        <div class="editor-label">
+            Nomination End Date
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NominationEndDate)
+            @Html.ValidationMessageFor(model => model.NominationEndDate)
+        </div>
+
+        <div class="editor-label">
+            Voting Start Date
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.VotingStartDate)
+            @Html.ValidationMessageFor(model => model.VotingStartDate)
+        </div>
+
+        <div class="editor-label">
+            Voting End Date
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.VotingEndDate)
+            @Html.ValidationMessageFor(model => model.VotingEndDate)
+        </div>
+
+        <div class="editor-label">
+            Term Start Date
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TermStartDate)
+            @Html.ValidationMessageFor(model => model.TermStartDate)
+        </div>
+    </fieldset>
+
+    <div>
+        <input type="submit" value="Create" /> | 
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

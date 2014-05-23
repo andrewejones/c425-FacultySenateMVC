@@ -1,0 +1,49 @@
+﻿@model FacultySenateMVC.Models.ElectionNomination
+
+@{
+    ViewBag.Title = "Create Election Nomination";
+}
+
+<h2>Create Election Nomination</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Election Nomination</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ElectionId, "Election")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ElectionId", String.Empty)
+            @Html.ValidationMessageFor(model => model.ElectionId)
+        </div>
+
+        <div class="editor-label">
+            Committee Seat
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CommitteeSeatId", String.Empty)
+            @Html.ValidationMessageFor(model => model.CommitteeSeatId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FacultyId, "Faculty")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("FacultyId", String.Empty)
+            @Html.ValidationMessageFor(model => model.FacultyId)
+        </div>
+    </fieldset>
+
+    <div>
+        <input type="submit" value="Create" /> | 
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

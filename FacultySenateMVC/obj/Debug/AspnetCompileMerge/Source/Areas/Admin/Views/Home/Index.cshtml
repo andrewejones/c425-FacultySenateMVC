@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Admin Home";
+}
+
+<h2>M&E Utilities</h2>
+
+@Html.ActionLink("Create Election", "Index", "CreateElection", new { Area = "MembershipAndElections" }, null) | 
+@Html.ActionLink("Elect Members", "Index", "ElectMember", new { Area = "MembershipAndElections" }, null)<br />
+
+<h2>Database Maintenance</h2>
+
+@Html.ActionLink("Faculty", "Index", "Faculty") | 
+@Html.ActionLink("Disciplines", "Index", "FacultyDiscipline") | 
+@Html.ActionLink("Ranks", "Index", "FacultyRank") | 
+@Html.ActionLink("Schools", "Index", "FacultySchool")<br /><br />
+
+@Html.ActionLink("Committees", "Index", "Committee") | 
+@Html.ActionLink("Types", "Index", "CommitteeType") | 
+@Html.ActionLink("Members", "Index", "CommitteeMember") | 
+@Html.ActionLink("Seats", "Index", "CommitteeSeat")<br /><br />
+
+@Html.ActionLink("Elections", "Index", "Election") | 
+@Html.ActionLink("Special Election Seats", "Index", "ElectionSpecialSeat") | 
+@Html.ActionLink("Nomination", "Index", "ElectionNomination") | 
+@Html.ActionLink("Type", "Index", "ElectionType") | 
+@Html.ActionLink("Vote", "Index", "ElectionVote")

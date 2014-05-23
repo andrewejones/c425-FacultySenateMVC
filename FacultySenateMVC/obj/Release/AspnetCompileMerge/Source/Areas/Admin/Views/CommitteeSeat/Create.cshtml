@@ -1,0 +1,57 @@
+﻿@model FacultySenateMVC.Models.CommitteeSeat
+
+@{
+    ViewBag.Title = "Create Committee Seat";
+}
+
+<h2>Create Committee Seat</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Committee Seat</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CommitteeId, "Committee") Name
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CommitteeId", String.Empty)
+            @Html.ValidationMessageFor(model => model.CommitteeId)
+        </div>
+
+        <div class="editor-label">
+            Representing
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("FacultySchoolId", String.Empty)
+            @Html.ValidationMessageFor(model => model.FacultySchoolId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StaggerYear)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StaggerYear)
+            @Html.ValidationMessageFor(model => model.StaggerYear)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Active)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Active)
+            @Html.ValidationMessageFor(model => model.Active)
+        </div>
+    </fieldset>
+
+    <div>
+        <input type="submit" value="Create" /> | 
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

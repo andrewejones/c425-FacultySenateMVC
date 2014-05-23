@@ -1,0 +1,33 @@
+﻿@model FacultySenateMVC.Models.CommitteeType
+
+@{
+    ViewBag.Title = "Create Committee Type";
+}
+
+<h2>Create Committee Type</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Committee Type</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+    </fieldset>
+
+    <div>
+        <input type="submit" value="Create" /> | 
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,111 @@
+﻿@{
+    ViewBag.Title = "Nominations Page";
+    FacultySenateMVC.Models.Election election = (FacultySenateMVC.Models.Election)ViewData["election"];
+}
+
+@if (ViewData["nominated"] != null && ((List<FacultySenateMVC.Models.Committee>)ViewData["nominated"]).Count() != 0)
+{
+    <h2>Nominated For:</h2>
+    <table>
+        <tr>
+            <th>
+                Committee
+            </th>
+            <th>
+                Type
+            </th>
+            <th></th>
+        </tr>
+    @foreach (var item in (List<FacultySenateMVC.Models.Committee>)ViewData["nominated"])
+    {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.CommitteeType.Name
+            </td>
+            <td>
+                @Html.ActionLink("Nominees", "Nominees", "Nomination", new { electionid = election.Id, committeeid = item.Id }, null) | 
+                @Html.ActionLink("Unnominate", "Unnominate", "Nomination", new { electionid = election.Id, committeeid = item.Id }, null)
+            </td>
+        </tr>
+    }
+    </table>
+    <br />
+}
+else
+{
+    <h2>Nominated For: None</h2>
+}
+
+@if(ViewData["eligible"] != null && ((List<FacultySenateMVC.Models.Committee>)ViewData["eligible"]).Count() != 0)
+{
+    <h2>Eligible For:</h2>
+    <table>
+        <tr>
+            <th>
+                Committee
+            </th>
+            <th>
+                Type
+            </th>
+            <th></th>
+        </tr>
+    @foreach (var item in (List<FacultySenateMVC.Models.Committee>)ViewData["eligible"])
+    {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.CommitteeType.Name
+            </td>
+            <td>
+                @Html.ActionLink("Nominees", "Nominees", "Nomination", new { electionid = election.Id, committeeid = item.Id }, null) | 
+                @Html.ActionLink("Nominate", "Nominate", "Nomination", new { electionid = election.Id, committeeid = item.Id }, null)
+            </td>
+        </tr>
+    }
+    </table>
+    <br />
+}
+else
+{
+    <h2>Eligible For: None</h2>
+}
+
+@if (ViewData["ineligible"] != null && ((List<FacultySenateMVC.Models.Committee>)ViewData["ineligible"]).Count() != 0)
+{
+    <h2>Ineligible For:</h2>
+    <table>
+        <tr>
+            <th>
+                Committee
+            </th>
+            <th>
+                Type
+            </th>
+            <th></th>
+        </tr>
+    @foreach (var item in (List<FacultySenateMVC.Models.Committee>)ViewData["ineligible"])
+    {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.CommitteeType.Name
+            </td>
+            <td>
+                @Html.ActionLink("Nominees", "Nominees", "Nomination", new { electionid = election.Id, committeeid = item.Id }, null) | 
+                @Html.ActionLink("Reasons", "Reasons", "Nomination", new { electionid = election.Id, committeeid = item.Id }, null)
+            </td>
+        </tr>
+    }
+    </table>
+}
+else
+{
+    <h2>Ineligible For: None</h2>
+}

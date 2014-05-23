@@ -1,0 +1,56 @@
+﻿@model FacultySenateMVC.Models.ElectionSpecialSeat
+
+@{
+    ViewBag.Title = "Delete Special Election Seat";
+}
+
+<h2>Delete Special Election Seat</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Special Election Seat</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id)
+    </div>
+
+    <div class="display-label">
+         Election Id
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Election.Id)
+    </div>
+
+    <div class="display-label">
+         Committee Seat Id
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CommitteeSeat.Id)
+    </div>
+
+    <div class="display-label">
+         Term Length
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TermLength)
+    </div>
+
+    <div class="display-label">
+         Term End Date
+    </div>
+    <div class="display-field">
+        @Model.TermEndDate.ToShortDateString()
+    </div>
+
+</fieldset>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <div>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}

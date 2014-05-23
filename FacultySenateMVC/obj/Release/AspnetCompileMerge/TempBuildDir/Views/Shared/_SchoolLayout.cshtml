@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Faculty Senate - @ViewBag.Title</title>
+    <link href="@Href("~/Content/app_style.css")" rel="stylesheet" @RenderSection("Styles", false)/>
+    <link href="@Href("~/favicon.ico")" rel="shortcut icon" type="image/x-icon" />
+    <style type="text/css">
+        .grid {
+            margin: 4px;
+            border-collapse: collapse;
+            width: 600px;
+        }
+            .grid th, .grid td {
+                border: 1px solid #C0C0C0;
+                padding: 5px;
+            }
+        .head {
+            background-color: #E8E8E8;
+            font-weight: bold;
+            color: #FFF;
+        }
+        .alt {
+            background-color: #E8E8E8;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <header>
+            <table style="width: 100%">
+                <tr>
+                    <td>
+                        <p style="margin:0; padding:0; font-weight:bold; font-size:xx-large">@Html.ActionLink("Faculty Senate Elections", "", "Home")</p>
+                    </td>
+                    <td>
+                        <a href="http://www.salisbury.edu/"><img alt="SU Logo" src="@Href("~/Images/su_logo_white.gif")" style="border-width: 0px; float: right; margin-right: 10px;" width="200" height="63" /></a>
+                    </td>
+                </tr>
+            </table>
+        </header>
+    </div>
+    <div id="main">
+        @if(Session["uname"] == "admin") // navbar will be here later
+        {
+            @Html.ActionLink("Home", "Index", "Home", new { area = "Admin" }, null)
+            @:&emsp;
+            @Html.ActionLink("Logout", "Logout", "Home", new { area = "" }, null)<br />
+        }
+        else if (Session["uname"] != null)
+        {
+            @Html.ActionLink("Home", "Index", "Home")
+            @:&emsp;
+            @Html.ActionLink("Logout", "Logout", "Home", new { area = "" }, null)<br />
+        }
+
+        @RenderBody()
+    </div>
+    <div id="footer">
+        <footer>
+            <p>Copyright &copy Salisbury University @TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time")).Year</p>
+        </footer>
+    </div>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

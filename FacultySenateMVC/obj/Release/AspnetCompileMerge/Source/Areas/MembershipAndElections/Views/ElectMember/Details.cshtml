@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "Elect Member Details";
+    FacultySenateMVC.Helpers.ElecInfo elecInfo = (FacultySenateMVC.Helpers.ElecInfo)ViewData["elecInfo"];
+}
+
+@if (elecInfo != null && elecInfo.electionCommittees != null && elecInfo.electionCommittees.Count() != 0)
+{
+    foreach (var com in elecInfo.electionCommittees)
+    {
+        if (com.nominees != null && com.nominees.Count() != 0)
+        {
+            <h2>@com.committee.Name</h2>
+            <table>
+                <tr>
+                    <th>
+                        Nominee
+                    </th>
+                    <th>
+                        Votes
+                    </th>
+                    <th>
+                        Eligible Seats
+                    </th>
+                </tr>
+            @foreach (var nom in com.nominees)
+            {
+                <tr>
+                    <td>
+                        @nom.nominee.First @nom.nominee.Last
+                    </td>
+                    <td>
+                        @nom.voteNum
+                    </td>
+                    <td>
+                        @foreach (var seat in nom.nominatedSeats)
+                        {
+                            if(nom.electedSeat != 0) // if already elected for this committee in this election
+                            {
+                                if (nom.electedSeat == seat) // if elected to this seat, can be unelected
+                                {
+                                    @Html.ActionLink("Unelect "+seat, "Unelect", "ElectMember", new { electionid = elecInfo.election.Id, seatid = seat, nomineeid = nom.nominee.Id }, null)
+                                    @: 
+                                    //<button type="button" style="padding: 0px; margin: 0px;" onclick="location.href='@Url.Action("Unelect", "ElectMember", new { electionid = elecInfo.election.Id, seatid = seat, nomineeid = nom.nominee.Id }, null)'">Unelect for @seat</button>
+                                }
+                                else // else, can't be elected to another seat
+                                {
+                                    <del>Elect @seat</del>
+                                    @: 
+                                    //<button type="button" style="padding: 0px; margin: 0px;" disabled>Elect for @seat</button>
+                                }
+                            }
+                            else // not elected in this election
+                            {
+                                if (elecInfo.electedSeats.Contains(seat) || nom.ineligibleSeats.Contains(seat)) // if someone elected to this seat this election or they're ineligible, can't be elected
+                                {
+                                    <del>Elect @seat</del>
+                                    @: 
+                                    //<button type="button" style="padding: 0px; margin: 0px;" disabled>Elect for @seat</button>
+                                }
+                                else // else, can be elected to this seat
+                                {
+                                    @Html.ActionLink("Elect "+seat, "Elect", "ElectMember", new { electionid = elecInfo.election.Id, seatid = seat, nomineeid = nom.nominee.Id }, null)
+                                    @: 
+                                    //<button type="button" style="padding: 0px; margin: 0px;" onclick="location.href='@Url.Action("Elect", "ElectMember", new { electionid = elecInfo.election.Id, seatid = seat, nomineeid = nom.nominee.Id }, null)'">Elect for @seat</button>
+                                }
+                            }
+                        }
+                    </td>
+                </tr>
+            }
+            </table>
+        }
+        else
+        {
+            <h2>No Nominees For @com.committee.Name</h2>
+        }
+    }
+}
+else
+{
+    <h2>No Nominees For Any Committees</h2>
+}

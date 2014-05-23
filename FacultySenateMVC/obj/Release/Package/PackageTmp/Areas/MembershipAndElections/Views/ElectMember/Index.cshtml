@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "Elect Member Home";
+}
+
+@if(((List<FacultySenateMVC.Models.Election>)ViewData["pastelections"]).Count() != 0)
+{
+    <h2>Past Elections:</h2>
+    <table>
+        <tr>
+            <th>
+                Election Type
+            </th>
+            <th>
+                Nomination Dates
+            </th>
+            <th>
+                Election Dates
+            </th>
+            <th>
+                Term Start Date
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in (List<FacultySenateMVC.Models.Election>)ViewData["pastelections"])
+    {
+        <tr>
+            <td>
+                @item.ElectionType.Name
+            </td>
+            <td>
+                @item.NominationStartDate.ToShortDateString() to @item.NominationEndDate.ToShortDateString()
+            </td>
+            <td>
+                @item.VotingStartDate.ToShortDateString() to @item.VotingEndDate.ToShortDateString()
+            </td>
+            <td>
+                @item.TermStartDate.ToShortDateString()
+            </td>
+            <td>
+                @if (item.VotingEndDate < TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time")))
+                {
+                    @Html.ActionLink("Elect Members", "Details", "ElectMember", new { id = item.Id }, null)
+                }
+            </td>
+        </tr>
+    }
+    </table>
+}
+else
+{
+    <h2>Past Elections: None</h2>
+}
+
+@if(((List<FacultySenateMVC.Models.Election>)ViewData["currelections"]).Count() != 0)
+{
+    <h2>Current Elections:</h2>
+    <table>
+        <tr>
+            <th>
+                Election Type
+            </th>
+            <th>
+                Nomination Dates
+            </th>
+            <th>
+                Voting Dates
+            </th>
+            <th>
+                Term Start Date
+            </th>
+        </tr>
+
+    @foreach (var item in (List<FacultySenateMVC.Models.Election>)ViewData["currelections"])
+    {
+        <tr>
+            <td>
+                @item.ElectionType.Name
+            </td>
+            <td>
+                @item.NominationStartDate.ToShortDateString() to @item.NominationEndDate.ToShortDateString()
+            </td>
+            <td>
+                @item.VotingStartDate.ToShortDateString() to @item.VotingEndDate.ToShortDateString()
+            </td>
+            <td>
+                @item.TermStartDate.ToShortDateString()
+            </td>
+        </tr>
+    }
+    </table>
+    <br />
+}
+else
+{
+    <h2>Current Elections: None</h2>
+}

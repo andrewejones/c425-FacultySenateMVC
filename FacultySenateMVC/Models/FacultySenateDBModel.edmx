@@ -1,0 +1,1073 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FacultySenateDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="FacultySenateDBModelStoreContainer">
+          <EntitySet Name="FacVote_Committee" EntityType="FacultySenateDBModel.Store.FacVote_Committee" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FacVote_CommitteeMember" EntityType="FacultySenateDBModel.Store.FacVote_CommitteeMember" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FacVote_CommitteeSeat" EntityType="FacultySenateDBModel.Store.FacVote_CommitteeSeat" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FacVote_CommitteeType" EntityType="FacultySenateDBModel.Store.FacVote_CommitteeType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FacVote_Election" EntityType="FacultySenateDBModel.Store.FacVote_Election" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FacVote_ElectionNomination" EntityType="FacultySenateDBModel.Store.FacVote_ElectionNomination" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FacVote_ElectionSpecialSeat" EntityType="FacultySenateDBModel.Store.FacVote_ElectionSpecialSeat" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FacVote_ElectionType" EntityType="FacultySenateDBModel.Store.FacVote_ElectionType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FacVote_ElectionVote" EntityType="FacultySenateDBModel.Store.FacVote_ElectionVote" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FacVote_Faculty" EntityType="FacultySenateDBModel.Store.FacVote_Faculty" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FacVote_FacultyDiscipline" EntityType="FacultySenateDBModel.Store.FacVote_FacultyDiscipline" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FacVote_FacultyRank" EntityType="FacultySenateDBModel.Store.FacVote_FacultyRank" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FacVote_FacultySchool" EntityType="FacultySenateDBModel.Store.FacVote_FacultySchool" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_FacVote_Committee_FacVote_CommitteeType" Association="FacultySenateDBModel.Store.FK_FacVote_Committee_FacVote_CommitteeType">
+            <End Role="FacVote_CommitteeType" EntitySet="FacVote_CommitteeType" />
+            <End Role="FacVote_Committee" EntitySet="FacVote_Committee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_CommitteeMember_FacVote_CommitteeSeat" Association="FacultySenateDBModel.Store.FK_FacVote_CommitteeMember_FacVote_CommitteeSeat">
+            <End Role="FacVote_CommitteeSeat" EntitySet="FacVote_CommitteeSeat" />
+            <End Role="FacVote_CommitteeMember" EntitySet="FacVote_CommitteeMember" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_CommitteeMember_FacVote_Faculty" Association="FacultySenateDBModel.Store.FK_FacVote_CommitteeMember_FacVote_Faculty">
+            <End Role="FacVote_Faculty" EntitySet="FacVote_Faculty" />
+            <End Role="FacVote_CommitteeMember" EntitySet="FacVote_CommitteeMember" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_CommitteeSeat_FacVote_Committee" Association="FacultySenateDBModel.Store.FK_FacVote_CommitteeSeat_FacVote_Committee">
+            <End Role="FacVote_Committee" EntitySet="FacVote_Committee" />
+            <End Role="FacVote_CommitteeSeat" EntitySet="FacVote_CommitteeSeat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_CommitteeSeat_FacVote_FacultySchool" Association="FacultySenateDBModel.Store.FK_FacVote_CommitteeSeat_FacVote_FacultySchool">
+            <End Role="FacVote_FacultySchool" EntitySet="FacVote_FacultySchool" />
+            <End Role="FacVote_CommitteeSeat" EntitySet="FacVote_CommitteeSeat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_Election_FacVote_ElectionType" Association="FacultySenateDBModel.Store.FK_FacVote_Election_FacVote_ElectionType">
+            <End Role="FacVote_ElectionType" EntitySet="FacVote_ElectionType" />
+            <End Role="FacVote_Election" EntitySet="FacVote_Election" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_ElectionNomination_FacVote_CommitteeSeat" Association="FacultySenateDBModel.Store.FK_FacVote_ElectionNomination_FacVote_CommitteeSeat">
+            <End Role="FacVote_CommitteeSeat" EntitySet="FacVote_CommitteeSeat" />
+            <End Role="FacVote_ElectionNomination" EntitySet="FacVote_ElectionNomination" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_ElectionNomination_FacVote_Election" Association="FacultySenateDBModel.Store.FK_FacVote_ElectionNomination_FacVote_Election">
+            <End Role="FacVote_Election" EntitySet="FacVote_Election" />
+            <End Role="FacVote_ElectionNomination" EntitySet="FacVote_ElectionNomination" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_ElectionNomination_FacVote_Faculty" Association="FacultySenateDBModel.Store.FK_FacVote_ElectionNomination_FacVote_Faculty">
+            <End Role="FacVote_Faculty" EntitySet="FacVote_Faculty" />
+            <End Role="FacVote_ElectionNomination" EntitySet="FacVote_ElectionNomination" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_ElectionSpecialSeat_FacVote_CommitteeSeat" Association="FacultySenateDBModel.Store.FK_FacVote_ElectionSpecialSeat_FacVote_CommitteeSeat">
+            <End Role="FacVote_CommitteeSeat" EntitySet="FacVote_CommitteeSeat" />
+            <End Role="FacVote_ElectionSpecialSeat" EntitySet="FacVote_ElectionSpecialSeat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_ElectionSpecialSeat_FacVote_Election" Association="FacultySenateDBModel.Store.FK_FacVote_ElectionSpecialSeat_FacVote_Election">
+            <End Role="FacVote_Election" EntitySet="FacVote_Election" />
+            <End Role="FacVote_ElectionSpecialSeat" EntitySet="FacVote_ElectionSpecialSeat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_ElectionVote_FacVote_Committee" Association="FacultySenateDBModel.Store.FK_FacVote_ElectionVote_FacVote_Committee">
+            <End Role="FacVote_Committee" EntitySet="FacVote_Committee" />
+            <End Role="FacVote_ElectionVote" EntitySet="FacVote_ElectionVote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_ElectionVote_FacVote_Election" Association="FacultySenateDBModel.Store.FK_FacVote_ElectionVote_FacVote_Election">
+            <End Role="FacVote_Election" EntitySet="FacVote_Election" />
+            <End Role="FacVote_ElectionVote" EntitySet="FacVote_ElectionVote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_ElectionVote_FacVote_Faculty_Nominee" Association="FacultySenateDBModel.Store.FK_FacVote_ElectionVote_FacVote_Faculty_Nominee">
+            <End Role="FacVote_Faculty" EntitySet="FacVote_Faculty" />
+            <End Role="FacVote_ElectionVote" EntitySet="FacVote_ElectionVote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_ElectionVote_FacVote_Faculty_Voter" Association="FacultySenateDBModel.Store.FK_FacVote_ElectionVote_FacVote_Faculty_Voter">
+            <End Role="FacVote_Faculty" EntitySet="FacVote_Faculty" />
+            <End Role="FacVote_ElectionVote" EntitySet="FacVote_ElectionVote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_Faculty_FacVote_FacultyDiscipline" Association="FacultySenateDBModel.Store.FK_FacVote_Faculty_FacVote_FacultyDiscipline">
+            <End Role="FacVote_FacultyDiscipline" EntitySet="FacVote_FacultyDiscipline" />
+            <End Role="FacVote_Faculty" EntitySet="FacVote_Faculty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_Faculty_FacVote_FacultyRank" Association="FacultySenateDBModel.Store.FK_FacVote_Faculty_FacVote_FacultyRank">
+            <End Role="FacVote_FacultyRank" EntitySet="FacVote_FacultyRank" />
+            <End Role="FacVote_Faculty" EntitySet="FacVote_Faculty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_FacultyDiscipline_FacVote_FacultySchool" Association="FacultySenateDBModel.Store.FK_FacVote_FacultyDiscipline_FacVote_FacultySchool">
+            <End Role="FacVote_FacultySchool" EntitySet="FacVote_FacultySchool" />
+            <End Role="FacVote_FacultyDiscipline" EntitySet="FacVote_FacultyDiscipline" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="FacVote_Committee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TermLength" Type="int" />
+          <Property Name="CommitteeTypeId" Type="int" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FacVote_CommitteeMember">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CommitteeSeatId" Type="int" Nullable="false" />
+          <Property Name="FacultyId" Type="int" Nullable="false" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="EndDate" Type="date" Nullable="false" />
+          <Property Name="ElectionId" Type="int" />
+          <Property Name="Appointed" Type="bit" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="FacVote_CommitteeSeat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CommitteeId" Type="int" Nullable="false" />
+          <Property Name="FacultySchoolId" Type="int" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="StaggerYear" Type="int" />
+        </EntityType>
+        <EntityType Name="FacVote_CommitteeType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FacVote_Election">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ElectionTypeId" Type="int" Nullable="false" />
+          <Property Name="NominationStartDate" Type="date" Nullable="false" />
+          <Property Name="NominationEndDate" Type="date" Nullable="false" />
+          <Property Name="VotingStartDate" Type="date" Nullable="false" />
+          <Property Name="VotingEndDate" Type="date" Nullable="false" />
+          <Property Name="TermStartDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FacVote_ElectionNomination">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ElectionId" Type="int" Nullable="false" />
+          <Property Name="CommitteeSeatId" Type="int" Nullable="false" />
+          <Property Name="FacultyId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FacVote_ElectionSpecialSeat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ElectionId" Type="int" Nullable="false" />
+          <Property Name="CommitteeSeatId" Type="int" Nullable="false" />
+          <Property Name="TermLength" Type="int" Nullable="false" />
+          <Property Name="TermEndDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FacVote_ElectionType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FacVote_ElectionVote">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ElectionId" Type="int" Nullable="false" />
+          <Property Name="CommitteeId" Type="int" Nullable="false" />
+          <Property Name="FacultyId_Nominee" Type="int" Nullable="false" />
+          <Property Name="FacultyId_Voter" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FacVote_Faculty">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="First" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Last" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="FacultyDisciplineId" Type="int" />
+          <Property Name="FacultyRankId" Type="int" />
+          <Property Name="Tenure" Type="bit" Nullable="false" />
+          <Property Name="Graduate" Type="bit" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FacVote_FacultyDiscipline">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Abbreviation" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FacultySchoolId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FacVote_FacultyRank">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FacVote_FacultySchool">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Abbreviation" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_FacVote_Committee_FacVote_CommitteeType">
+          <End Role="FacVote_CommitteeType" Type="FacultySenateDBModel.Store.FacVote_CommitteeType" Multiplicity="1" />
+          <End Role="FacVote_Committee" Type="FacultySenateDBModel.Store.FacVote_Committee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_CommitteeType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_Committee">
+              <PropertyRef Name="CommitteeTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_CommitteeMember_FacVote_CommitteeSeat">
+          <End Role="FacVote_CommitteeSeat" Type="FacultySenateDBModel.Store.FacVote_CommitteeSeat" Multiplicity="1" />
+          <End Role="FacVote_CommitteeMember" Type="FacultySenateDBModel.Store.FacVote_CommitteeMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_CommitteeSeat">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_CommitteeMember">
+              <PropertyRef Name="CommitteeSeatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_CommitteeMember_FacVote_Faculty">
+          <End Role="FacVote_Faculty" Type="FacultySenateDBModel.Store.FacVote_Faculty" Multiplicity="1" />
+          <End Role="FacVote_CommitteeMember" Type="FacultySenateDBModel.Store.FacVote_CommitteeMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_Faculty">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_CommitteeMember">
+              <PropertyRef Name="FacultyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_CommitteeSeat_FacVote_Committee">
+          <End Role="FacVote_Committee" Type="FacultySenateDBModel.Store.FacVote_Committee" Multiplicity="1" />
+          <End Role="FacVote_CommitteeSeat" Type="FacultySenateDBModel.Store.FacVote_CommitteeSeat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_Committee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_CommitteeSeat">
+              <PropertyRef Name="CommitteeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_CommitteeSeat_FacVote_FacultySchool">
+          <End Role="FacVote_FacultySchool" Type="FacultySenateDBModel.Store.FacVote_FacultySchool" Multiplicity="0..1" />
+          <End Role="FacVote_CommitteeSeat" Type="FacultySenateDBModel.Store.FacVote_CommitteeSeat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_FacultySchool">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_CommitteeSeat">
+              <PropertyRef Name="FacultySchoolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_Election_FacVote_ElectionType">
+          <End Role="FacVote_ElectionType" Type="FacultySenateDBModel.Store.FacVote_ElectionType" Multiplicity="1" />
+          <End Role="FacVote_Election" Type="FacultySenateDBModel.Store.FacVote_Election" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_ElectionType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_Election">
+              <PropertyRef Name="ElectionTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_ElectionNomination_FacVote_CommitteeSeat">
+          <End Role="FacVote_CommitteeSeat" Type="FacultySenateDBModel.Store.FacVote_CommitteeSeat" Multiplicity="1" />
+          <End Role="FacVote_ElectionNomination" Type="FacultySenateDBModel.Store.FacVote_ElectionNomination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_CommitteeSeat">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_ElectionNomination">
+              <PropertyRef Name="CommitteeSeatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_ElectionNomination_FacVote_Election">
+          <End Role="FacVote_Election" Type="FacultySenateDBModel.Store.FacVote_Election" Multiplicity="1" />
+          <End Role="FacVote_ElectionNomination" Type="FacultySenateDBModel.Store.FacVote_ElectionNomination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_Election">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_ElectionNomination">
+              <PropertyRef Name="ElectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_ElectionNomination_FacVote_Faculty">
+          <End Role="FacVote_Faculty" Type="FacultySenateDBModel.Store.FacVote_Faculty" Multiplicity="1" />
+          <End Role="FacVote_ElectionNomination" Type="FacultySenateDBModel.Store.FacVote_ElectionNomination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_Faculty">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_ElectionNomination">
+              <PropertyRef Name="FacultyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_ElectionSpecialSeat_FacVote_CommitteeSeat">
+          <End Role="FacVote_CommitteeSeat" Type="FacultySenateDBModel.Store.FacVote_CommitteeSeat" Multiplicity="1" />
+          <End Role="FacVote_ElectionSpecialSeat" Type="FacultySenateDBModel.Store.FacVote_ElectionSpecialSeat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_CommitteeSeat">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_ElectionSpecialSeat">
+              <PropertyRef Name="CommitteeSeatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_ElectionSpecialSeat_FacVote_Election">
+          <End Role="FacVote_Election" Type="FacultySenateDBModel.Store.FacVote_Election" Multiplicity="1" />
+          <End Role="FacVote_ElectionSpecialSeat" Type="FacultySenateDBModel.Store.FacVote_ElectionSpecialSeat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_Election">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_ElectionSpecialSeat">
+              <PropertyRef Name="ElectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_ElectionVote_FacVote_Committee">
+          <End Role="FacVote_Committee" Type="FacultySenateDBModel.Store.FacVote_Committee" Multiplicity="1" />
+          <End Role="FacVote_ElectionVote" Type="FacultySenateDBModel.Store.FacVote_ElectionVote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_Committee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_ElectionVote">
+              <PropertyRef Name="CommitteeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_ElectionVote_FacVote_Election">
+          <End Role="FacVote_Election" Type="FacultySenateDBModel.Store.FacVote_Election" Multiplicity="1" />
+          <End Role="FacVote_ElectionVote" Type="FacultySenateDBModel.Store.FacVote_ElectionVote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_Election">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_ElectionVote">
+              <PropertyRef Name="ElectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_ElectionVote_FacVote_Faculty_Nominee">
+          <End Role="FacVote_Faculty" Type="FacultySenateDBModel.Store.FacVote_Faculty" Multiplicity="1" />
+          <End Role="FacVote_ElectionVote" Type="FacultySenateDBModel.Store.FacVote_ElectionVote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_Faculty">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_ElectionVote">
+              <PropertyRef Name="FacultyId_Nominee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_ElectionVote_FacVote_Faculty_Voter">
+          <End Role="FacVote_Faculty" Type="FacultySenateDBModel.Store.FacVote_Faculty" Multiplicity="1" />
+          <End Role="FacVote_ElectionVote" Type="FacultySenateDBModel.Store.FacVote_ElectionVote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_Faculty">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_ElectionVote">
+              <PropertyRef Name="FacultyId_Voter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_Faculty_FacVote_FacultyDiscipline">
+          <End Role="FacVote_FacultyDiscipline" Type="FacultySenateDBModel.Store.FacVote_FacultyDiscipline" Multiplicity="0..1" />
+          <End Role="FacVote_Faculty" Type="FacultySenateDBModel.Store.FacVote_Faculty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_FacultyDiscipline">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_Faculty">
+              <PropertyRef Name="FacultyDisciplineId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_Faculty_FacVote_FacultyRank">
+          <End Role="FacVote_FacultyRank" Type="FacultySenateDBModel.Store.FacVote_FacultyRank" Multiplicity="0..1" />
+          <End Role="FacVote_Faculty" Type="FacultySenateDBModel.Store.FacVote_Faculty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_FacultyRank">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_Faculty">
+              <PropertyRef Name="FacultyRankId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_FacultyDiscipline_FacVote_FacultySchool">
+          <End Role="FacVote_FacultySchool" Type="FacultySenateDBModel.Store.FacVote_FacultySchool" Multiplicity="1" />
+          <End Role="FacVote_FacultyDiscipline" Type="FacultySenateDBModel.Store.FacVote_FacultyDiscipline" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_FacultySchool">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_FacultyDiscipline">
+              <PropertyRef Name="FacultySchoolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FacultySenateDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="FacultySenateDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Committees" EntityType="FacultySenateDBModel.Committee" />
+          <EntitySet Name="CommitteeMembers" EntityType="FacultySenateDBModel.CommitteeMember" />
+          <EntitySet Name="CommitteeSeats" EntityType="FacultySenateDBModel.CommitteeSeat" />
+          <EntitySet Name="CommitteeTypes" EntityType="FacultySenateDBModel.CommitteeType" />
+          <EntitySet Name="Elections" EntityType="FacultySenateDBModel.Election" />
+          <EntitySet Name="ElectionNominations" EntityType="FacultySenateDBModel.ElectionNomination" />
+          <EntitySet Name="ElectionSpecialSeats" EntityType="FacultySenateDBModel.ElectionSpecialSeat" />
+          <EntitySet Name="ElectionTypes" EntityType="FacultySenateDBModel.ElectionType" />
+          <EntitySet Name="ElectionVotes" EntityType="FacultySenateDBModel.ElectionVote" />
+          <EntitySet Name="Faculties" EntityType="FacultySenateDBModel.Faculty" />
+          <EntitySet Name="FacultyDisciplines" EntityType="FacultySenateDBModel.FacultyDiscipline" />
+          <EntitySet Name="FacultyRanks" EntityType="FacultySenateDBModel.FacultyRank" />
+          <EntitySet Name="FacultySchools" EntityType="FacultySenateDBModel.FacultySchool" />
+          <AssociationSet Name="FK_FacVote_Committee_FacVote_CommitteeType" Association="FacultySenateDBModel.FK_FacVote_Committee_FacVote_CommitteeType">
+            <End Role="FacVote_CommitteeType" EntitySet="CommitteeTypes" />
+            <End Role="FacVote_Committee" EntitySet="Committees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_CommitteeSeat_FacVote_Committee" Association="FacultySenateDBModel.FK_FacVote_CommitteeSeat_FacVote_Committee">
+            <End Role="FacVote_Committee" EntitySet="Committees" />
+            <End Role="FacVote_CommitteeSeat" EntitySet="CommitteeSeats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_ElectionVote_FacVote_Committee" Association="FacultySenateDBModel.FK_FacVote_ElectionVote_FacVote_Committee">
+            <End Role="FacVote_Committee" EntitySet="Committees" />
+            <End Role="FacVote_ElectionVote" EntitySet="ElectionVotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_CommitteeMember_FacVote_CommitteeSeat" Association="FacultySenateDBModel.FK_FacVote_CommitteeMember_FacVote_CommitteeSeat">
+            <End Role="FacVote_CommitteeSeat" EntitySet="CommitteeSeats" />
+            <End Role="FacVote_CommitteeMember" EntitySet="CommitteeMembers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_CommitteeMember_FacVote_Faculty" Association="FacultySenateDBModel.FK_FacVote_CommitteeMember_FacVote_Faculty">
+            <End Role="FacVote_Faculty" EntitySet="Faculties" />
+            <End Role="FacVote_CommitteeMember" EntitySet="CommitteeMembers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_CommitteeSeat_FacVote_FacultySchool" Association="FacultySenateDBModel.FK_FacVote_CommitteeSeat_FacVote_FacultySchool">
+            <End Role="FacVote_FacultySchool" EntitySet="FacultySchools" />
+            <End Role="FacVote_CommitteeSeat" EntitySet="CommitteeSeats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_ElectionNomination_FacVote_CommitteeSeat" Association="FacultySenateDBModel.FK_FacVote_ElectionNomination_FacVote_CommitteeSeat">
+            <End Role="FacVote_CommitteeSeat" EntitySet="CommitteeSeats" />
+            <End Role="FacVote_ElectionNomination" EntitySet="ElectionNominations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_ElectionSpecialSeat_FacVote_CommitteeSeat" Association="FacultySenateDBModel.FK_FacVote_ElectionSpecialSeat_FacVote_CommitteeSeat">
+            <End Role="FacVote_CommitteeSeat" EntitySet="CommitteeSeats" />
+            <End Role="FacVote_ElectionSpecialSeat" EntitySet="ElectionSpecialSeats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_Election_FacVote_ElectionType" Association="FacultySenateDBModel.FK_FacVote_Election_FacVote_ElectionType">
+            <End Role="FacVote_ElectionType" EntitySet="ElectionTypes" />
+            <End Role="FacVote_Election" EntitySet="Elections" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_ElectionNomination_FacVote_Election" Association="FacultySenateDBModel.FK_FacVote_ElectionNomination_FacVote_Election">
+            <End Role="FacVote_Election" EntitySet="Elections" />
+            <End Role="FacVote_ElectionNomination" EntitySet="ElectionNominations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_ElectionSpecialSeat_FacVote_Election" Association="FacultySenateDBModel.FK_FacVote_ElectionSpecialSeat_FacVote_Election">
+            <End Role="FacVote_Election" EntitySet="Elections" />
+            <End Role="FacVote_ElectionSpecialSeat" EntitySet="ElectionSpecialSeats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_ElectionVote_FacVote_Election" Association="FacultySenateDBModel.FK_FacVote_ElectionVote_FacVote_Election">
+            <End Role="FacVote_Election" EntitySet="Elections" />
+            <End Role="FacVote_ElectionVote" EntitySet="ElectionVotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_ElectionNomination_FacVote_Faculty" Association="FacultySenateDBModel.FK_FacVote_ElectionNomination_FacVote_Faculty">
+            <End Role="FacVote_Faculty" EntitySet="Faculties" />
+            <End Role="FacVote_ElectionNomination" EntitySet="ElectionNominations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_ElectionVote_FacVote_Faculty_Nominee" Association="FacultySenateDBModel.FK_FacVote_ElectionVote_FacVote_Faculty_Nominee">
+            <End Role="FacVote_Faculty" EntitySet="Faculties" />
+            <End Role="FacVote_ElectionVote" EntitySet="ElectionVotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_ElectionVote_FacVote_Faculty_Voter" Association="FacultySenateDBModel.FK_FacVote_ElectionVote_FacVote_Faculty_Voter">
+            <End Role="FacVote_Faculty" EntitySet="Faculties" />
+            <End Role="FacVote_ElectionVote" EntitySet="ElectionVotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_Faculty_FacVote_FacultyDiscipline" Association="FacultySenateDBModel.FK_FacVote_Faculty_FacVote_FacultyDiscipline">
+            <End Role="FacVote_FacultyDiscipline" EntitySet="FacultyDisciplines" />
+            <End Role="FacVote_Faculty" EntitySet="Faculties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_Faculty_FacVote_FacultyRank" Association="FacultySenateDBModel.FK_FacVote_Faculty_FacVote_FacultyRank">
+            <End Role="FacVote_FacultyRank" EntitySet="FacultyRanks" />
+            <End Role="FacVote_Faculty" EntitySet="Faculties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FacVote_FacultyDiscipline_FacVote_FacultySchool" Association="FacultySenateDBModel.FK_FacVote_FacultyDiscipline_FacVote_FacultySchool">
+            <End Role="FacVote_FacultySchool" EntitySet="FacultySchools" />
+            <End Role="FacVote_FacultyDiscipline" EntitySet="FacultyDisciplines" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Committee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="TermLength" />
+          <Property Type="Int32" Name="CommitteeTypeId" Nullable="false" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+          <NavigationProperty Name="CommitteeType" Relationship="FacultySenateDBModel.FK_FacVote_Committee_FacVote_CommitteeType" FromRole="FacVote_Committee" ToRole="FacVote_CommitteeType" />
+          <NavigationProperty Name="CommitteeSeat" Relationship="FacultySenateDBModel.FK_FacVote_CommitteeSeat_FacVote_Committee" FromRole="FacVote_Committee" ToRole="FacVote_CommitteeSeat" />
+          <NavigationProperty Name="ElectionVote" Relationship="FacultySenateDBModel.FK_FacVote_ElectionVote_FacVote_Committee" FromRole="FacVote_Committee" ToRole="FacVote_ElectionVote" />
+        </EntityType>
+        <EntityType Name="CommitteeMember">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="CommitteeSeatId" Nullable="false" />
+          <Property Type="Int32" Name="FacultyId" Nullable="false" />
+          <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="EndDate" Nullable="false" Precision="0" />
+          <Property Type="Int32" Name="ElectionId" />
+          <Property Type="Boolean" Name="Appointed" Nullable="false" />
+          <Property Type="String" Name="Notes" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CommitteeSeat" Relationship="FacultySenateDBModel.FK_FacVote_CommitteeMember_FacVote_CommitteeSeat" FromRole="FacVote_CommitteeMember" ToRole="FacVote_CommitteeSeat" />
+          <NavigationProperty Name="Faculty" Relationship="FacultySenateDBModel.FK_FacVote_CommitteeMember_FacVote_Faculty" FromRole="FacVote_CommitteeMember" ToRole="FacVote_Faculty" />
+        </EntityType>
+        <EntityType Name="CommitteeSeat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="CommitteeId" Nullable="false" />
+          <Property Type="Int32" Name="FacultySchoolId" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+          <Property Type="Int32" Name="StaggerYear" />
+          <NavigationProperty Name="Committee" Relationship="FacultySenateDBModel.FK_FacVote_CommitteeSeat_FacVote_Committee" FromRole="FacVote_CommitteeSeat" ToRole="FacVote_Committee" />
+          <NavigationProperty Name="CommitteeMember" Relationship="FacultySenateDBModel.FK_FacVote_CommitteeMember_FacVote_CommitteeSeat" FromRole="FacVote_CommitteeSeat" ToRole="FacVote_CommitteeMember" />
+          <NavigationProperty Name="FacultySchool" Relationship="FacultySenateDBModel.FK_FacVote_CommitteeSeat_FacVote_FacultySchool" FromRole="FacVote_CommitteeSeat" ToRole="FacVote_FacultySchool" />
+          <NavigationProperty Name="ElectionNomination" Relationship="FacultySenateDBModel.FK_FacVote_ElectionNomination_FacVote_CommitteeSeat" FromRole="FacVote_CommitteeSeat" ToRole="FacVote_ElectionNomination" />
+          <NavigationProperty Name="ElectionSpecialSeat" Relationship="FacultySenateDBModel.FK_FacVote_ElectionSpecialSeat_FacVote_CommitteeSeat" FromRole="FacVote_CommitteeSeat" ToRole="FacVote_ElectionSpecialSeat" />
+        </EntityType>
+        <EntityType Name="CommitteeType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Committee" Relationship="FacultySenateDBModel.FK_FacVote_Committee_FacVote_CommitteeType" FromRole="FacVote_CommitteeType" ToRole="FacVote_Committee" />
+        </EntityType>
+        <EntityType Name="Election">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ElectionTypeId" Nullable="false" />
+          <Property Type="DateTime" Name="NominationStartDate" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="NominationEndDate" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="VotingStartDate" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="VotingEndDate" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="TermStartDate" Nullable="false" Precision="0" />
+          <NavigationProperty Name="ElectionType" Relationship="FacultySenateDBModel.FK_FacVote_Election_FacVote_ElectionType" FromRole="FacVote_Election" ToRole="FacVote_ElectionType" />
+          <NavigationProperty Name="ElectionNomination" Relationship="FacultySenateDBModel.FK_FacVote_ElectionNomination_FacVote_Election" FromRole="FacVote_Election" ToRole="FacVote_ElectionNomination" />
+          <NavigationProperty Name="ElectionSpecialSeat" Relationship="FacultySenateDBModel.FK_FacVote_ElectionSpecialSeat_FacVote_Election" FromRole="FacVote_Election" ToRole="FacVote_ElectionSpecialSeat" />
+          <NavigationProperty Name="ElectionVote" Relationship="FacultySenateDBModel.FK_FacVote_ElectionVote_FacVote_Election" FromRole="FacVote_Election" ToRole="FacVote_ElectionVote" />
+        </EntityType>
+        <EntityType Name="ElectionNomination">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ElectionId" Nullable="false" />
+          <Property Type="Int32" Name="CommitteeSeatId" Nullable="false" />
+          <Property Type="Int32" Name="FacultyId" Nullable="false" />
+          <NavigationProperty Name="CommitteeSeat" Relationship="FacultySenateDBModel.FK_FacVote_ElectionNomination_FacVote_CommitteeSeat" FromRole="FacVote_ElectionNomination" ToRole="FacVote_CommitteeSeat" />
+          <NavigationProperty Name="Election" Relationship="FacultySenateDBModel.FK_FacVote_ElectionNomination_FacVote_Election" FromRole="FacVote_ElectionNomination" ToRole="FacVote_Election" />
+          <NavigationProperty Name="Faculty" Relationship="FacultySenateDBModel.FK_FacVote_ElectionNomination_FacVote_Faculty" FromRole="FacVote_ElectionNomination" ToRole="FacVote_Faculty" />
+        </EntityType>
+        <EntityType Name="ElectionSpecialSeat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ElectionId" Nullable="false" />
+          <Property Type="Int32" Name="CommitteeSeatId" Nullable="false" />
+          <Property Type="Int32" Name="TermLength" Nullable="false" />
+          <Property Type="DateTime" Name="TermEndDate" Nullable="false" Precision="0" />
+          <NavigationProperty Name="CommitteeSeat" Relationship="FacultySenateDBModel.FK_FacVote_ElectionSpecialSeat_FacVote_CommitteeSeat" FromRole="FacVote_ElectionSpecialSeat" ToRole="FacVote_CommitteeSeat" />
+          <NavigationProperty Name="Election" Relationship="FacultySenateDBModel.FK_FacVote_ElectionSpecialSeat_FacVote_Election" FromRole="FacVote_ElectionSpecialSeat" ToRole="FacVote_Election" />
+        </EntityType>
+        <EntityType Name="ElectionType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Election" Relationship="FacultySenateDBModel.FK_FacVote_Election_FacVote_ElectionType" FromRole="FacVote_ElectionType" ToRole="FacVote_Election" />
+        </EntityType>
+        <EntityType Name="ElectionVote">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ElectionId" Nullable="false" />
+          <Property Type="Int32" Name="CommitteeId" Nullable="false" />
+          <Property Type="Int32" Name="FacultyId_Nominee" Nullable="false" />
+          <Property Type="Int32" Name="FacultyId_Voter" Nullable="false" />
+          <NavigationProperty Name="Committee" Relationship="FacultySenateDBModel.FK_FacVote_ElectionVote_FacVote_Committee" FromRole="FacVote_ElectionVote" ToRole="FacVote_Committee" />
+          <NavigationProperty Name="Election" Relationship="FacultySenateDBModel.FK_FacVote_ElectionVote_FacVote_Election" FromRole="FacVote_ElectionVote" ToRole="FacVote_Election" />
+          <NavigationProperty Name="Faculty_Nominee" Relationship="FacultySenateDBModel.FK_FacVote_ElectionVote_FacVote_Faculty_Nominee" FromRole="FacVote_ElectionVote" ToRole="FacVote_Faculty" />
+          <NavigationProperty Name="Faculty_Voter" Relationship="FacultySenateDBModel.FK_FacVote_ElectionVote_FacVote_Faculty_Voter" FromRole="FacVote_ElectionVote" ToRole="FacVote_Faculty" />
+        </EntityType>
+        <EntityType Name="Faculty">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="First" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Last" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="FacultyDisciplineId" />
+          <Property Type="Int32" Name="FacultyRankId" />
+          <Property Type="Boolean" Name="Tenure" Nullable="false" />
+          <Property Type="Boolean" Name="Graduate" Nullable="false" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+          <NavigationProperty Name="CommitteeMember" Relationship="FacultySenateDBModel.FK_FacVote_CommitteeMember_FacVote_Faculty" FromRole="FacVote_Faculty" ToRole="FacVote_CommitteeMember" />
+          <NavigationProperty Name="ElectionNomination" Relationship="FacultySenateDBModel.FK_FacVote_ElectionNomination_FacVote_Faculty" FromRole="FacVote_Faculty" ToRole="FacVote_ElectionNomination" />
+          <NavigationProperty Name="ElectionVote_Nominee" Relationship="FacultySenateDBModel.FK_FacVote_ElectionVote_FacVote_Faculty_Nominee" FromRole="FacVote_Faculty" ToRole="FacVote_ElectionVote" />
+          <NavigationProperty Name="ElectionVote_Voter" Relationship="FacultySenateDBModel.FK_FacVote_ElectionVote_FacVote_Faculty_Voter" FromRole="FacVote_Faculty" ToRole="FacVote_ElectionVote" />
+          <NavigationProperty Name="FacultyDiscipline" Relationship="FacultySenateDBModel.FK_FacVote_Faculty_FacVote_FacultyDiscipline" FromRole="FacVote_Faculty" ToRole="FacVote_FacultyDiscipline" />
+          <NavigationProperty Name="FacultyRank" Relationship="FacultySenateDBModel.FK_FacVote_Faculty_FacVote_FacultyRank" FromRole="FacVote_Faculty" ToRole="FacVote_FacultyRank" />
+        </EntityType>
+        <EntityType Name="FacultyDiscipline">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Abbreviation" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="FacultySchoolId" Nullable="false" />
+          <NavigationProperty Name="Faculty" Relationship="FacultySenateDBModel.FK_FacVote_Faculty_FacVote_FacultyDiscipline" FromRole="FacVote_FacultyDiscipline" ToRole="FacVote_Faculty" />
+          <NavigationProperty Name="FacultySchool" Relationship="FacultySenateDBModel.FK_FacVote_FacultyDiscipline_FacVote_FacultySchool" FromRole="FacVote_FacultyDiscipline" ToRole="FacVote_FacultySchool" />
+        </EntityType>
+        <EntityType Name="FacultyRank">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Faculty" Relationship="FacultySenateDBModel.FK_FacVote_Faculty_FacVote_FacultyRank" FromRole="FacVote_FacultyRank" ToRole="FacVote_Faculty" />
+        </EntityType>
+        <EntityType Name="FacultySchool">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Abbreviation" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CommitteeSeat" Relationship="FacultySenateDBModel.FK_FacVote_CommitteeSeat_FacVote_FacultySchool" FromRole="FacVote_FacultySchool" ToRole="FacVote_CommitteeSeat" />
+          <NavigationProperty Name="FacultyDiscipline" Relationship="FacultySenateDBModel.FK_FacVote_FacultyDiscipline_FacVote_FacultySchool" FromRole="FacVote_FacultySchool" ToRole="FacVote_FacultyDiscipline" />
+        </EntityType>
+        <Association Name="FK_FacVote_Committee_FacVote_CommitteeType">
+          <End Type="FacultySenateDBModel.CommitteeType" Role="FacVote_CommitteeType" Multiplicity="1" />
+          <End Type="FacultySenateDBModel.Committee" Role="FacVote_Committee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_CommitteeType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_Committee">
+              <PropertyRef Name="CommitteeTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_CommitteeSeat_FacVote_Committee">
+          <End Type="FacultySenateDBModel.Committee" Role="FacVote_Committee" Multiplicity="1" />
+          <End Type="FacultySenateDBModel.CommitteeSeat" Role="FacVote_CommitteeSeat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_Committee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_CommitteeSeat">
+              <PropertyRef Name="CommitteeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_ElectionVote_FacVote_Committee">
+          <End Type="FacultySenateDBModel.Committee" Role="FacVote_Committee" Multiplicity="1" />
+          <End Type="FacultySenateDBModel.ElectionVote" Role="FacVote_ElectionVote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_Committee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_ElectionVote">
+              <PropertyRef Name="CommitteeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_CommitteeMember_FacVote_CommitteeSeat">
+          <End Type="FacultySenateDBModel.CommitteeSeat" Role="FacVote_CommitteeSeat" Multiplicity="1" />
+          <End Type="FacultySenateDBModel.CommitteeMember" Role="FacVote_CommitteeMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_CommitteeSeat">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_CommitteeMember">
+              <PropertyRef Name="CommitteeSeatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_CommitteeMember_FacVote_Faculty">
+          <End Type="FacultySenateDBModel.Faculty" Role="FacVote_Faculty" Multiplicity="1" />
+          <End Type="FacultySenateDBModel.CommitteeMember" Role="FacVote_CommitteeMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_Faculty">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_CommitteeMember">
+              <PropertyRef Name="FacultyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_CommitteeSeat_FacVote_FacultySchool">
+          <End Type="FacultySenateDBModel.FacultySchool" Role="FacVote_FacultySchool" Multiplicity="0..1" />
+          <End Type="FacultySenateDBModel.CommitteeSeat" Role="FacVote_CommitteeSeat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_FacultySchool">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_CommitteeSeat">
+              <PropertyRef Name="FacultySchoolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_ElectionNomination_FacVote_CommitteeSeat">
+          <End Type="FacultySenateDBModel.CommitteeSeat" Role="FacVote_CommitteeSeat" Multiplicity="1" />
+          <End Type="FacultySenateDBModel.ElectionNomination" Role="FacVote_ElectionNomination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_CommitteeSeat">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_ElectionNomination">
+              <PropertyRef Name="CommitteeSeatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_ElectionSpecialSeat_FacVote_CommitteeSeat">
+          <End Type="FacultySenateDBModel.CommitteeSeat" Role="FacVote_CommitteeSeat" Multiplicity="1" />
+          <End Type="FacultySenateDBModel.ElectionSpecialSeat" Role="FacVote_ElectionSpecialSeat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_CommitteeSeat">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_ElectionSpecialSeat">
+              <PropertyRef Name="CommitteeSeatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_Election_FacVote_ElectionType">
+          <End Type="FacultySenateDBModel.ElectionType" Role="FacVote_ElectionType" Multiplicity="1" />
+          <End Type="FacultySenateDBModel.Election" Role="FacVote_Election" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_ElectionType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_Election">
+              <PropertyRef Name="ElectionTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_ElectionNomination_FacVote_Election">
+          <End Type="FacultySenateDBModel.Election" Role="FacVote_Election" Multiplicity="1" />
+          <End Type="FacultySenateDBModel.ElectionNomination" Role="FacVote_ElectionNomination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_Election">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_ElectionNomination">
+              <PropertyRef Name="ElectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_ElectionSpecialSeat_FacVote_Election">
+          <End Type="FacultySenateDBModel.Election" Role="FacVote_Election" Multiplicity="1" />
+          <End Type="FacultySenateDBModel.ElectionSpecialSeat" Role="FacVote_ElectionSpecialSeat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_Election">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_ElectionSpecialSeat">
+              <PropertyRef Name="ElectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_ElectionVote_FacVote_Election">
+          <End Type="FacultySenateDBModel.Election" Role="FacVote_Election" Multiplicity="1" />
+          <End Type="FacultySenateDBModel.ElectionVote" Role="FacVote_ElectionVote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_Election">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_ElectionVote">
+              <PropertyRef Name="ElectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_ElectionNomination_FacVote_Faculty">
+          <End Type="FacultySenateDBModel.Faculty" Role="FacVote_Faculty" Multiplicity="1" />
+          <End Type="FacultySenateDBModel.ElectionNomination" Role="FacVote_ElectionNomination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_Faculty">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_ElectionNomination">
+              <PropertyRef Name="FacultyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_ElectionVote_FacVote_Faculty_Nominee">
+          <End Type="FacultySenateDBModel.Faculty" Role="FacVote_Faculty" Multiplicity="1" />
+          <End Type="FacultySenateDBModel.ElectionVote" Role="FacVote_ElectionVote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_Faculty">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_ElectionVote">
+              <PropertyRef Name="FacultyId_Nominee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_ElectionVote_FacVote_Faculty_Voter">
+          <End Type="FacultySenateDBModel.Faculty" Role="FacVote_Faculty" Multiplicity="1" />
+          <End Type="FacultySenateDBModel.ElectionVote" Role="FacVote_ElectionVote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_Faculty">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_ElectionVote">
+              <PropertyRef Name="FacultyId_Voter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_Faculty_FacVote_FacultyDiscipline">
+          <End Type="FacultySenateDBModel.FacultyDiscipline" Role="FacVote_FacultyDiscipline" Multiplicity="0..1" />
+          <End Type="FacultySenateDBModel.Faculty" Role="FacVote_Faculty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_FacultyDiscipline">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_Faculty">
+              <PropertyRef Name="FacultyDisciplineId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_Faculty_FacVote_FacultyRank">
+          <End Type="FacultySenateDBModel.FacultyRank" Role="FacVote_FacultyRank" Multiplicity="0..1" />
+          <End Type="FacultySenateDBModel.Faculty" Role="FacVote_Faculty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_FacultyRank">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_Faculty">
+              <PropertyRef Name="FacultyRankId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FacVote_FacultyDiscipline_FacVote_FacultySchool">
+          <End Type="FacultySenateDBModel.FacultySchool" Role="FacVote_FacultySchool" Multiplicity="1" />
+          <End Type="FacultySenateDBModel.FacultyDiscipline" Role="FacVote_FacultyDiscipline" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacVote_FacultySchool">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FacVote_FacultyDiscipline">
+              <PropertyRef Name="FacultySchoolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FacultySenateDBModelStoreContainer" CdmEntityContainer="FacultySenateDBEntities">
+          <EntitySetMapping Name="Committees">
+            <EntityTypeMapping TypeName="FacultySenateDBModel.Committee">
+              <MappingFragment StoreEntitySet="FacVote_Committee">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CommitteeTypeId" ColumnName="CommitteeTypeId" />
+                <ScalarProperty Name="TermLength" ColumnName="TermLength" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommitteeMembers">
+            <EntityTypeMapping TypeName="FacultySenateDBModel.CommitteeMember">
+              <MappingFragment StoreEntitySet="FacVote_CommitteeMember">
+                <ScalarProperty Name="ElectionId" ColumnName="ElectionId" />
+                <ScalarProperty Name="Appointed" ColumnName="Appointed" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="FacultyId" ColumnName="FacultyId" />
+                <ScalarProperty Name="CommitteeSeatId" ColumnName="CommitteeSeatId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommitteeSeats">
+            <EntityTypeMapping TypeName="FacultySenateDBModel.CommitteeSeat">
+              <MappingFragment StoreEntitySet="FacVote_CommitteeSeat">
+                <ScalarProperty Name="StaggerYear" ColumnName="StaggerYear" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="FacultySchoolId" ColumnName="FacultySchoolId" />
+                <ScalarProperty Name="CommitteeId" ColumnName="CommitteeId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommitteeTypes">
+            <EntityTypeMapping TypeName="FacultySenateDBModel.CommitteeType">
+              <MappingFragment StoreEntitySet="FacVote_CommitteeType">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Elections">
+            <EntityTypeMapping TypeName="FacultySenateDBModel.Election">
+              <MappingFragment StoreEntitySet="FacVote_Election">
+                <ScalarProperty Name="TermStartDate" ColumnName="TermStartDate" />
+                <ScalarProperty Name="VotingEndDate" ColumnName="VotingEndDate" />
+                <ScalarProperty Name="VotingStartDate" ColumnName="VotingStartDate" />
+                <ScalarProperty Name="NominationEndDate" ColumnName="NominationEndDate" />
+                <ScalarProperty Name="NominationStartDate" ColumnName="NominationStartDate" />
+                <ScalarProperty Name="ElectionTypeId" ColumnName="ElectionTypeId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElectionNominations">
+            <EntityTypeMapping TypeName="FacultySenateDBModel.ElectionNomination">
+              <MappingFragment StoreEntitySet="FacVote_ElectionNomination">
+                <ScalarProperty Name="FacultyId" ColumnName="FacultyId" />
+                <ScalarProperty Name="CommitteeSeatId" ColumnName="CommitteeSeatId" />
+                <ScalarProperty Name="ElectionId" ColumnName="ElectionId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElectionSpecialSeats">
+            <EntityTypeMapping TypeName="FacultySenateDBModel.ElectionSpecialSeat">
+              <MappingFragment StoreEntitySet="FacVote_ElectionSpecialSeat">
+                <ScalarProperty Name="TermEndDate" ColumnName="TermEndDate" />
+                <ScalarProperty Name="TermLength" ColumnName="TermLength" />
+                <ScalarProperty Name="CommitteeSeatId" ColumnName="CommitteeSeatId" />
+                <ScalarProperty Name="ElectionId" ColumnName="ElectionId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElectionTypes">
+            <EntityTypeMapping TypeName="FacultySenateDBModel.ElectionType">
+              <MappingFragment StoreEntitySet="FacVote_ElectionType">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElectionVotes">
+            <EntityTypeMapping TypeName="FacultySenateDBModel.ElectionVote">
+              <MappingFragment StoreEntitySet="FacVote_ElectionVote">
+                <ScalarProperty Name="FacultyId_Voter" ColumnName="FacultyId_Voter" />
+                <ScalarProperty Name="FacultyId_Nominee" ColumnName="FacultyId_Nominee" />
+                <ScalarProperty Name="CommitteeId" ColumnName="CommitteeId" />
+                <ScalarProperty Name="ElectionId" ColumnName="ElectionId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Faculties">
+            <EntityTypeMapping TypeName="FacultySenateDBModel.Faculty">
+              <MappingFragment StoreEntitySet="FacVote_Faculty">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Graduate" ColumnName="Graduate" />
+                <ScalarProperty Name="Tenure" ColumnName="Tenure" />
+                <ScalarProperty Name="FacultyRankId" ColumnName="FacultyRankId" />
+                <ScalarProperty Name="FacultyDisciplineId" ColumnName="FacultyDisciplineId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Last" ColumnName="Last" />
+                <ScalarProperty Name="First" ColumnName="First" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FacultyDisciplines">
+            <EntityTypeMapping TypeName="FacultySenateDBModel.FacultyDiscipline">
+              <MappingFragment StoreEntitySet="FacVote_FacultyDiscipline">
+                <ScalarProperty Name="FacultySchoolId" ColumnName="FacultySchoolId" />
+                <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FacultyRanks">
+            <EntityTypeMapping TypeName="FacultySenateDBModel.FacultyRank">
+              <MappingFragment StoreEntitySet="FacVote_FacultyRank">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FacultySchools">
+            <EntityTypeMapping TypeName="FacultySenateDBModel.FacultySchool">
+              <MappingFragment StoreEntitySet="FacVote_FacultySchool">
+                <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

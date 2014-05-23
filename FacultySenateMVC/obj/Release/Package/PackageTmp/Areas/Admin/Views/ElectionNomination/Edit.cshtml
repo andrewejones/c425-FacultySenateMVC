@@ -1,0 +1,58 @@
+﻿@model FacultySenateMVC.Models.ElectionNomination
+
+@{
+    ViewBag.Title = "Edit Election Nomination";
+}
+
+<h2>Edit Election Nomination</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Election Nomination</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Id)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Id)
+        </div>
+
+        <div class="editor-label">
+            Election Id
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ElectionId", String.Empty)
+            @Html.ValidationMessageFor(model => model.ElectionId)
+        </div>
+
+        <div class="editor-label">
+            Committee Seat Id
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CommitteeSeatId", String.Empty)
+            @Html.ValidationMessageFor(model => model.CommitteeSeatId)
+        </div>
+
+        <div class="editor-label">
+            Faculty
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("FacultyId", String.Empty)
+            @Html.ValidationMessageFor(model => model.FacultyId)
+        </div>
+    </fieldset>
+
+    <div>
+        <input type="submit" value="Save" /> | 
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Election Nominees";
+    Layout = null;
+
+    FacultySenateMVC.Models.Election election = (FacultySenateMVC.Models.Election)ViewData["election"];
+    List<FacultySenateMVC.Helpers.CommitteeNomineesVM> nominees = (List<FacultySenateMVC.Helpers.CommitteeNomineesVM>)ViewData["nominees"];
+}
+
+@if (nominees != null && nominees.Count() != 0)
+{
+    foreach (var comm in nominees)
+    {
+        if (comm != null && comm.nominees.Count() != 0)
+        {
+            <h2>@comm.committee.Name (@comm.committee.CommitteeType.Name)</h2>
+            <table>
+                <tr>
+                    <th>
+                        First
+                    </th>
+                    <th>
+                        Last
+                    </th>
+                    <th>
+                        Representing
+                    </th>
+                </tr>
+                @foreach (var nom in comm.nominees)
+                {
+                    <tr>
+                        <td>
+                            @nom.nominee.First
+                        </td>
+                        <td>
+                            @nom.nominee.Last
+                        </td>
+                        <td>
+                            @if (election.ElectionType.Name.Contains("School"))
+                            {
+                                @nom.nominee.FacultyDiscipline.FacultySchool.Abbreviation
+                            }
+                            else
+                            {
+                                @:At-Large
+                            }
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <h2>No Nominees</h2>
+        }
+    }
+}
+else
+{
+    <h2>No Committees Have Nominees</h2>
+}

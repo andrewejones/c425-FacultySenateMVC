@@ -1,0 +1,43 @@
+﻿@model FacultySenateMVC.Models.ElectionType
+
+@{
+    ViewBag.Title = "Edit Election Type";
+}
+
+<h2>Edit Election Type</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Election Type</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Id)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+    </fieldset>
+
+    <div>
+        <input type="submit" value="Save" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,57 @@
+﻿@model FacultySenateMVC.Models.ElectionVote
+
+@{
+    ViewBag.Title = "Create Election Vote";
+}
+
+<h2>Create Election Vote</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Election Vote</legend>
+
+        <div class="editor-label">
+            Election Id
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ElectionId", String.Empty)
+            @Html.ValidationMessageFor(model => model.ElectionId)
+        </div>
+
+        <div class="editor-label">
+            Committee
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CommitteeId", String.Empty)
+            @Html.ValidationMessageFor(model => model.CommitteeId)
+        </div>
+
+        <div class="editor-label">
+            Nominee
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("FacultyId_Nominee", String.Empty)
+            @Html.ValidationMessageFor(model => model.FacultyId_Nominee)
+        </div>
+
+        <div class="editor-label">
+            Voter
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("FacultyId_Voter", String.Empty)
+            @Html.ValidationMessageFor(model => model.FacultyId_Voter)
+        </div>
+    </fieldset>
+
+    <div>
+        <input type="submit" value="Create" /> | 
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

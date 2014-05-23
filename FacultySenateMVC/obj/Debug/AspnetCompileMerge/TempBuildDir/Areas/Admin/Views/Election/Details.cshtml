@@ -1,0 +1,51 @@
+﻿@model FacultySenateMVC.Models.Election
+
+@{
+    ViewBag.Title = "Election Details";
+}
+
+<h2>Election Details</h2>
+
+<fieldset>
+    <legend>Election</legend>
+
+    <div class="display-label">
+         Id
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id)
+    </div>
+
+    <div class="display-label">
+         Election Type
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ElectionType.Name)
+    </div>
+
+    <div class="display-label">
+         Nomination Dates
+    </div>
+    <div class="display-field">
+        @Model.NominationStartDate.ToShortDateString() to @Model.NominationEndDate.ToShortDateString()
+    </div>
+
+    <div class="display-label">
+         Voting Dates
+    </div>
+    <div class="display-field">
+        @Model.VotingStartDate.ToShortDateString() to @Model.VotingEndDate.ToShortDateString()
+    </div>
+
+    <div class="display-label">
+         Term Start Date
+    </div>
+    <div class="display-field">
+        @Model.TermStartDate.ToShortDateString()
+    </div>
+</fieldset>
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Current Nominees";
+    Layout = null;
+
+    List<FacultySenateMVC.Models.ElectionNomination> nominees = (List<FacultySenateMVC.Models.ElectionNomination>)ViewData["nominees"];
+}
+
+@if (nominees != null && nominees.Count() != 0)
+{
+    <h2>Nominees for @nominees.First().CommitteeSeat.Committee.Name</h2>
+    <table>
+        <tr>
+            <th>
+                First
+            </th>
+            <th>
+                Last
+            </th>
+            <th>
+                Representing
+            </th>
+        </tr>
+    @foreach (var item in nominees)
+    {
+        <tr>
+            <td>
+                @item.Faculty.First
+            </td>
+            <td>
+                @item.Faculty.Last
+            </td>
+            <td>
+                @if (item.Election.ElectionType.Name == "At-Large" || item.Election.ElectionType.Name == "Special (At-Large)" || item.CommitteeSeat.CommitteeId == null)
+                {
+                    @:At-Large
+                }
+                else
+                {
+                    @item.CommitteeSeat.FacultySchool.Abbreviation
+                }
+            </td>
+        </tr>
+    }
+    </table>
+}
+else
+{
+    <h2>No Nominees</h2>
+}

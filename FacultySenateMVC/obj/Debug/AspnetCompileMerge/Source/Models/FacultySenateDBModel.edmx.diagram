@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bc6f08414efd487e981cbeb70ca4413c" Name="Diagram">
+        <EntityTypeShape EntityType="FacultySenateDBModel.Committee" Width="1.5" PointX="0.875" PointY="3.25" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.CommitteeMember" Width="1.75" PointX="8.125" PointY="9.375" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.CommitteeSeat" Width="1.625" PointX="3.125" PointY="7.125" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.CommitteeType" Width="1.5" PointX="1.625" PointY="0.75" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.Election" Width="1.75" PointX="3" PointY="15" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.ElectionNomination" Width="1.75" PointX="11.125" PointY="9.5" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.ElectionSpecialSeat" Width="1.75" PointX="5.5" PointY="6.375" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.ElectionType" Width="1.5" PointX="0.75" PointY="15.75" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.ElectionVote" Width="1.625" PointX="8.125" PointY="12.875" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.Faculty" Width="1.875" PointX="5.5" PointY="10.25" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.FacultyDiscipline" Width="1.625" PointX="3.125" PointY="11.125" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.FacultyRank" Width="1.5" PointX="3.25" PointY="4.5" />
+        <EntityTypeShape EntityType="FacultySenateDBModel.FacultySchool" Width="1.5" PointX="0.875" PointY="7.5" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_Committee_FacVote_CommitteeType" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_CommitteeSeat_FacVote_Committee" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_ElectionVote_FacVote_Committee" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_CommitteeMember_FacVote_CommitteeSeat" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_CommitteeMember_FacVote_Faculty" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_CommitteeSeat_FacVote_FacultySchool" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_ElectionNomination_FacVote_CommitteeSeat" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_ElectionSpecialSeat_FacVote_CommitteeSeat" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_Election_FacVote_ElectionType" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_ElectionNomination_FacVote_Election" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_ElectionSpecialSeat_FacVote_Election" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_ElectionVote_FacVote_Election" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_ElectionNomination_FacVote_Faculty" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_ElectionVote_FacVote_Faculty_Nominee" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_ElectionVote_FacVote_Faculty_Voter" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_Faculty_FacVote_FacultyDiscipline" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_Faculty_FacVote_FacultyRank" />
+        <AssociationConnector Association="FacultySenateDBModel.FK_FacVote_FacultyDiscipline_FacVote_FacultySchool" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

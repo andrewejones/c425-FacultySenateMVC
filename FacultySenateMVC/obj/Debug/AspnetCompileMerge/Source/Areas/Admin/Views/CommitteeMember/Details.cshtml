@@ -1,0 +1,90 @@
+﻿@model FacultySenateMVC.Models.CommitteeMember
+
+@{
+    ViewBag.Title = "Committee Member Details";
+}
+
+<h2>Committee Member Details</h2>
+
+<fieldset>
+    <legend>Committee Member</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id)
+    </div>
+
+    <div class="display-label">
+         Committee Seat
+    </div>
+    <div class="display-field">
+        @Model.CommitteeSeat.Committee.Name
+        @if (Model.CommitteeSeat.FacultySchool == null)
+        {
+            @: - At-Large
+        }
+        else
+        {
+            @:  - 
+            @Model.CommitteeSeat.FacultySchool.Abbreviation
+        }
+        @if (Model.CommitteeSeat.StaggerYear == null)
+        {
+            @:  - 0
+        }
+        else
+        {
+            @:  - 
+            @Model.CommitteeSeat.StaggerYear
+        }
+    </div>
+
+    <div class="display-label">
+         Faculty
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Faculty.First)  @Html.DisplayFor(model => model.Faculty.Last)
+    </div>
+
+    <div class="display-label">
+         Start Date
+    </div>
+    <div class="display-field">
+        @Model.StartDate.ToShortDateString()
+    </div>
+
+    <div class="display-label">
+         End Date
+    </div>
+    <div class="display-field">
+        @Model.EndDate.ToShortDateString()
+    </div>
+
+    <div class="display-label">
+         Election Id
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ElectionId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Appointed)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Appointed)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Notes)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Notes)
+    </div>
+</fieldset>
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</div>

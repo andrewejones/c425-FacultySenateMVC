@@ -1,0 +1,57 @@
+﻿@model FacultySenateMVC.Models.Committee
+
+@{
+    ViewBag.Title = "Committee Details";
+}
+
+<h2>Committee Details</h2>
+
+<fieldset>
+    <legend>Committee</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         Type
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CommitteeType.Name)
+    </div>
+
+    <div class="display-label">
+         Term Length
+    </div>
+    <div class="display-field">
+        @if (Model.TermLength == null)
+        {
+            @:None
+        }
+        else
+        {
+            @Html.DisplayFor(model => model.TermLength) @:years
+        }
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Active)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Active)
+    </div>
+</fieldset>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</div>

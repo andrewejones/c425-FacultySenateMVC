@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Ineligibility Reasons";
+    Layout = null;
+}
+
+@if (ViewData["reasons"] != null && ((List<String>)ViewData["reasons"]).Count() > 0)
+{
+    <table>
+        <tr>
+            <th>
+                Reason
+            </th>
+        </tr>
+    @foreach (var item in (List<String>)ViewData["reasons"])
+    {
+        <tr>
+            <td>
+                @item
+            </td>
+        </tr>
+    }
+    </table>
+}
+else
+{
+    <h2>Couldn't Find Reason(s) for Ineligibility, Please Contact Admin</h2>
+}
